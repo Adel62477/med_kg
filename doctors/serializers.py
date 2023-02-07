@@ -1,20 +1,18 @@
 from rest_framework import serializers
+from doctors.models import Doctor
 from users.models import User
 
 
-class UserSerializer(serializers.ModelSerializer):
+class DoctorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = [Doctor, User]
         fields = (
             'id',
-            'email',
-            'first_name',
-            'last_name',
-            'phone_number',
-            'password'
-        )
-        extra_kwargs = (
-            {'password': {'write_only': True}}
+            'user',
+            'speciality',
+            'working_place',
+            'propic',
+
         )
 
     def create(self, validated_data):
@@ -22,3 +20,4 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data.get('password'))
         user.save()
         return user
+
