@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework_simplejwt',
 
-    #3rd party packages
+
+    #3RD party_packages
     'users',
     'mainapp',
     'doctors',
