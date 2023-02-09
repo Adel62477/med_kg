@@ -1,9 +1,8 @@
 from rest_framework import serializers
-from mainapp.models import City, Speciality
+from mainapp.models import City, Speciality, Patient
 
 
 class CitySerializer(serializers.ModelSerializer):
-    city = serializers.ReadOnlyField(source='name')
 
     class Meta:
         model = City
@@ -11,19 +10,14 @@ class CitySerializer(serializers.ModelSerializer):
             'id',
             'name',
         )
-        read_only_fields = (
-            'name',
-        )
 
 
 class SpecialitySerializer(serializers.ModelSerializer):
-    speciality = serializers.ReadOnlyField(source='name')
 
     class Meta:
         model = Speciality
         fields = (
-            '__all__'
-        )
-        read_only_fields = (
-            'name',
+            '__all__',
+            'id',
+            'name'
         )
