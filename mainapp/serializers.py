@@ -22,8 +22,7 @@ class SpecialitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Speciality
         fields = (
-            'id',
-            'name',
+            '__all__'
         )
         read_only_fields = (
             'name',
