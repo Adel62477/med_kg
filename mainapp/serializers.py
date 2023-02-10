@@ -17,7 +17,20 @@ class SpecialitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Speciality
         fields = (
-            '__all__',
+            # '__all__',
             'id',
             'name'
+        )
+
+
+class PatientSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Patient
+        fields = (
+            'id',
+            'name',
+            'phone_number',
+            'email',
+            'date_created',
+            'date_updated',
         )
